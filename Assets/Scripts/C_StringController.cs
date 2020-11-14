@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class C_StringController : StringController {
-
-	void OnMouseDown() {
+	void Start() {
+		stringIndex = 1;
+		base.Start();
+	}
+	void Update() {
+		base.Update();
 		if (Input.GetKey(KeyCode.A)) {
-			Debug.Log("mouse click and Z held");
-			PlayString(1);
+			// Debug.Log("Z held");
+			fretNum = 1;
 		} else if (Input.GetKey(KeyCode.S)) {
-			Debug.Log("mouse click and Z held");
-			PlayString(2);
+			// Debug.Log("X held");
+			fretNum = 2;
 		} else if (Input.GetKey(KeyCode.D)) {
-			Debug.Log("mouse click and Z held");
-			PlayString(3);
+			// Debug.Log("C held");
+			fretNum = 3;
 		} else {
-			PlayString(0);
-			Debug.Log("mouse click");
+			fretNum = 0;
+			// Debug.Log("nothing held");
 		}
-		
+	}
+	void OnMouseDown() {
+		PlayString(fretNum);
 	}
 }
