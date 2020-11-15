@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class RopeController : StringController {
+public class RopeControllerSave : StringController {
   public Transform StartPoint;
   public Transform EndPoint;
 
