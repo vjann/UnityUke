@@ -55,6 +55,9 @@ public class StringController : MonoBehaviour {
 	// Update is called once per frame
 	protected void Update() {
 		this.DrawRope();
+	}
+
+	private void FixedUpdate() {
 		bool openString = true;
 		for (int i=0; i<this.fretKeyCodes.Length; i++) {
 			if (Input.GetKey(this.fretKeyCodes[i])) {
@@ -74,9 +77,6 @@ public class StringController : MonoBehaviour {
 			Strum(fretNum, delayScaling*(3-stringIndex));
 		}
 		this.prevMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-	}
-
-	private void FixedUpdate() {
 		Simulate();
 	}
 
