@@ -4,13 +4,13 @@ using System;
 using UnityEngine;
 
 public class StringController : MonoBehaviour {
-	protected AudioSource[] audioSources;
-	public AudioClip[] audioClips;
-	protected float delayScaling = 0.1f;
 	public int stringIndex;
 	public KeyCode[] fretKeyCodes;
-	protected int fretNum;
-	protected Vector3 prevMousePosition;
+	public AudioClip[] audioClips;
+	public int fretNum;
+	private AudioSource[] audioSources;
+	private float delayScaling = 0.1f;
+	private Vector3 prevMousePosition;
 
 	public Transform StartPoint;
 	public Transform EndPoint;
@@ -128,6 +128,10 @@ public class StringController : MonoBehaviour {
       this.decay *= this.decay_rate;
     }
   }
+
+	public int getFretNum() {
+		return fretNum;
+	}
 
 	public struct RopePoint {
     public Vector2 posNow;
